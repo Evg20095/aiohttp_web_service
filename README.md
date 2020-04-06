@@ -6,8 +6,8 @@ Installation
 
 Clone repo and install library::
 
-    $ git clone git@github.com:aio-libs/aiohttp-demos.git
-    $ cd aiohttp-demos
+    $ git clone git@github.com:Evg20095/aiohttp_web_service.git
+    $ cd aiohttp-polls
 
 Run application::
 
