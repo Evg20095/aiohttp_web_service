@@ -13,6 +13,10 @@ Run application::
 
     $ python main.py
 
+Need::
+
+    Posrtgre, configuration in the config folder
+
 Open browser::
 
     http://127.0.0.1:8080/registration
