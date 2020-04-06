@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION</title>
+</head>
+
+<body leftmargin="500", rightmargin="500">
+    
+    <form  accept-charset="utf-8" enctype="application/x-www-form-urlencoded" id="reg">
+        <fieldset>
+        <legend form="reg">
+            {% if login == 'not_exist'%}
+                <a>Successful account creation</a>
+            {% elif login == 'exist'%}
+                <a>Login already exist</a>                     
+            {% else %}
+                <a>Create your Account.</a>
+            {% endif %}
+        </legend>
+        <br>
+        <label for="login">Create login</label>
+        <input id="login" name="login" type="text" value="" autofocus required/>
+        <br><br>
+        <label for="password">Create password</label>
+        <input id="password" name="password" type="password" value="" required/>
+        <br><br>
+        <input type="submit" formmethod="POST" value="Create Account"/>
+        
+    </form>
+    <br><br>
+    <form action="/authorization" target="_blank">
+        <button>Log on</button>
+    </form>
+    </fieldset>
+    
+</body>
+
+</html>
+
+
+
+

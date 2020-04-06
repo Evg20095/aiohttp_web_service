@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .layer1 {
+         position: relative; 
+         height: 200px; 
+        }
+        .layer2 {
+         position: absolute; 
+         top: 50px;
+         right: 50px; 
+         line-height: 1px;
+        }
+        ul.hr li {
+        display: inline-block; /* Отображать как строчный элемент */
+        }
+
+       </style>
+</head>
+<body leftmargin="500", rightmargin="500">
+      
+    <div class="layer1">
+        <fieldset>
+            <div class="layer2">
+                <a href="/deleteaccount"><button>Delete account</button></a>
+            </div>  
+            {% if login %}
+                <h1> Welcome to account, {{login}}! </h1>           
+            {% else %}
+                <a>Tyt chto-to est</a>
+            {% endif %}
+            <br>
+            <h3>My Google Drive links:</h3> 
+            
+            {% if record %}
+                <ul>
+                {% for link in record %}
+                    <ul class="hr">
+                        <li>
+                            <form action="/deletelink" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+                                <button type="submit" name="deleted_link" value={{ link.Links }}>Delet Link</button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/download" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+                                <button type="submit" name="download_link" value={{ link.Links }}> Download </button>
+                            </form>
+                        </li>
+                        <li>
+                            {{ link.Links }}
+                        </li>
+                    </ul>
+                    <br>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No link are available.</p>
+            {% endif %}
+            
+            <a href="/addlink"><button>Add link</button></a>
+            <br> <br> <br> <br>
+            <a href="/logout"><button>Log out</button></a>
+            <a href="/resetpassword"><button>Reset password</button></a>
+        </fieldset>
+    </div>
+</body>
+</html>

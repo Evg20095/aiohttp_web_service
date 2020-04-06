@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTHORIZATION_PAGE</title>
+</head>
+
+<body leftmargin="500", rightmargin="500">
+
+    <form  accept-charset="utf-8"
+      enctype="application/x-www-form-urlencoded" id="reg">
+        <fieldset>
+            <legend form="reg">
+                {% if logpass == 'False'%}
+                    <a>Login and password mismatch</a>                
+                {% else %}
+                    <a>Authorization, please.</a>
+                {% endif %}
+            </legend>
+            <br>
+            <label for="login">Login</label>
+            <input id="login" name="login" type="text" value="" autofocus required/>
+            <br><br>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" value="" required/>
+            <br><br>
+            <input type="submit" formmethod="POST" value="Authorization"/>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
+
+
+
+
