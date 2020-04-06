@@ -30,3 +30,7 @@ Requirements
 ============
 * aiohttp_
 * aiohttp_jinja2_
+* aiohttp_security
+* aiopg.sa
+* sqlalchemy
+* yaml
